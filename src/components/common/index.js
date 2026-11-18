@@ -9,3 +9,7 @@ export { ExperienceCard } from './ExperienceCard';
 export { ServiceCard } from './ServiceCard';
 export { ContactCard } from './ContactCard';
 export { DynamicIcon } from './DynamicIcon';
+export { SearchBar } from './SearchBar';
+export { UserCard } from './UserCard';
+export { UserDetailsModal } from './UserDetailsModal';
+export { ScrollToTop } from './ScrollToTop';

@@ -25,7 +25,14 @@ import {
   Download,
   ArrowUpRight,
   Check,
-  Globe
+  Globe,
+  Search,
+  Users,
+  Building2,
+  AlertCircle,
+  RefreshCw,
+  UserCheck,
+  Info
 } from 'lucide-react';
 
 const GithubIcon = ({ size = 20, className = '', color = 'currentColor' }) => (
@@ -92,7 +99,14 @@ const iconsMap = {
   Download,
   ArrowUpRight,
   Check,
-  Globe
+  Globe,
+  Search,
+  Users,
+  Building2,
+  AlertCircle,
+  RefreshCw,
+  UserCheck,
+  Info
 };
 
 export const DynamicIcon = ({ name, size = 20, className = '', color, style }) => {

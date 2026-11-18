@@ -1,40 +1,37 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
-import {
-  Hero,
-  About,
-  Skills,
-  Projects,
-  Experience,
-  Contact
-} from './components/sections';
+import { ScrollToTop } from './components/common';
+import { HomePage, UsersPage, NotFoundPage } from './pages';
 
 function App() {
   return (
     <ThemeProvider>
-      <div className="portfolio-app">
-        {/* Background ambient lighting effects */}
-        <div className="ambient-glow top-right" aria-hidden="true" />
-        <div className="ambient-glow bottom-left" aria-hidden="true" />
+      <BrowserRouter>
+        <ScrollToTop />
+        <div className="portfolio-app">
+          {/* Background ambient lighting effects */}
+          <div className="ambient-glow top-right" aria-hidden="true" />
+          <div className="ambient-glow bottom-left" aria-hidden="true" />
 
-        {/* Header Navigation */}
-        <Navbar />
+          {/* Header Navigation */}
+          <Navbar />
 
-        {/* Main Sections */}
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Contact />
-        </main>
+          {/* Main Routed Content */}
+          <main>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/users" element={<UsersPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
 
-        {/* Footer */}
-        <Footer />
-      </div>
+          {/* Footer */}
+          <Footer />
+        </div>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

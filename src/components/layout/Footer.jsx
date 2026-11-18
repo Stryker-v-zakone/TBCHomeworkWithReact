@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom';
 import { personalInfo } from '../../data/portfolioData';
 import { DynamicIcon } from '../common/DynamicIcon';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
 export const Footer = () => {
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -60,11 +60,12 @@ export const Footer = () => {
           <div>
             <h4 className="footer-column-title">ნავიგაცია</h4>
             <div className="footer-links-list">
-              <a href="#hero">მთავარი</a>
-              <a href="#about">ჩემ შესახებ</a>
-              <a href="#skills">ტექნოლოგიური სტეკი</a>
-              <a href="#projects">პროექტები</a>
-              <a href="#experience">გამოცდილება</a>
+              <Link to="/">მთავარი</Link>
+              <Link to="/#about">ჩემ შესახებ</Link>
+              <Link to="/#skills">ტექნოლოგიური სტეკი</Link>
+              <Link to="/#projects">პროექტები</Link>
+              <Link to="/#experience">გამოცდილება</Link>
+              <Link to="/users">მომხმარებლები (API)</Link>
             </div>
           </div>
 
@@ -74,8 +75,8 @@ export const Footer = () => {
             <div className="footer-links-list">
               <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
               <a href={`tel:${personalInfo.phone}`}>{personalInfo.phone}</a>
-              <a href="#contact">{personalInfo.location}</a>
-              <a href="#contact">შეტყობინების გაგზავნა</a>
+              <Link to="/#contact">{personalInfo.location}</Link>
+              <Link to="/#contact">შეტყობინების გაგზავნა</Link>
             </div>
           </div>
         </div>
@@ -83,7 +84,7 @@ export const Footer = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <p>
-            © {CURRENT_YEAR} {personalInfo.name}. დამზადებულია React-ით & Tailwind/CSS-ით.
+            © {CURRENT_YEAR} {personalInfo.name}. დამზადებულია React-ით & CSS-ით.
           </p>
 
           <button
